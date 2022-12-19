@@ -3,6 +3,8 @@ Prediction in the isobaric heat capacity measurement (at 298~K) deviation due to
 
 > Estimated ANN Model prediction accuracy over the test data is '99.92 %'
 
+![Deep Neural Network Architecture used in the present case](dsc_ann.png)
+
 # Direction
 Use python file 'error_pred_example.py' file to predict the error in heat capacity measurement
 
