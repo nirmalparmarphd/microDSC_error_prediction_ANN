@@ -6,7 +6,7 @@ Prediction in the isobaric heat capacity measurement (at 298~K) deviation due to
 ![Deep Neural Network Architecture used in the present case](dsc_ann.png)
 
 # Direction
-Use python file 'error_pred_example.py' file to predict the error in heat capacity measurement
+Use python file 'mwe.py' file to predict the error in heat capacity measurement
 
 **OR**
 
