@@ -5,11 +5,11 @@ from tensorflow.keras.models import load_model
 
 print('-'*70)
 information ='''
-* This is a Deep learning (DL) ANN model to predict an deviation due to an inappropriate amount combination of the sample and a reference material in a batch cell of Tian-Calvet micro-DSC.
+* This is a Deep learning (DL) ANN model to predict a deviation due to an inappropriate amount combination of the sample and a reference material in a batch cell of Tian-Calvet micro-DSC.
 
-* Predict the possible deviation that may arrise in your experiment with the sample and a reference material amount in [ml]!
+* Predict the possible deviation that may arise in the heat capacity measurement experiment with the sample and a reference material amount in [ml]!
 
--->ANN Model accuracy on test data is 99.92 [%]<--'''
+-->ANN Model accuracy on test data is 99.98 [%]<--'''
 
 print(information)
 print('-'*70)
