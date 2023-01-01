@@ -36,8 +36,8 @@ The example output
 ----------------------------------------------------------------------
 Reference amount [ml]:  0.8
 Sample amount [ml]:  0.8
-Heat capacity measurement deviation prediction (%):  [[-0.69]]
-COMMENT(s):
+Heat capacity measurement deviation prediction (%):  [[0.42]]
+COMMENT(s): 
             Sample and reference amount combination is appropriate.
             Consider 0.8~ml as standard amount to avoid any deviation in the measurement.
 ----------------------------------------------------------------------
