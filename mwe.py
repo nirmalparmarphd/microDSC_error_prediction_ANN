@@ -8,7 +8,7 @@ from modul import *
 # NOTE: enter the sample and reference material amount in [ml] 
 
 # Example 1: Reference amount(ml) = 0.8, Sample amount(ml)= 0.8
-# 0.8~ml [full], 0.4~ml [half full], 2.6~ml [one third full]
+# 0.8~ml [full], 0.4~ml [half full], 0.26~ml [one third full]
 Reference_amount = 0.8
 Sample_amount = 0.8
 
