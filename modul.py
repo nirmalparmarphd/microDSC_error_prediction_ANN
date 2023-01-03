@@ -26,18 +26,22 @@ class dsc_error_model():
     data_ = scaler.transform(data)
     pred = model.predict(data_)
     pred_ = np.round(((pred*100)-100).astype(np.float64),2)
+    pred_df = pd.DataFrame(pred_)
+    pred_df.columns=['Total-Deviation-(%)', 'Reference-Deviation-(%)']
     
     print('-'*70)
     print('Reference amount [ml]: ', Ref)
     print('Sample amount [ml]: ', Sam)
-    
-    if abs(pred_) <= 1.5:
-      print('Heat capacity measurement deviation prediction (%): ', pred_)
+
+    if abs(pred_df.iloc[0,1]) <= 1.5:
+      print('Heat capacity measurement deviation prediction (%): ')
+      print(pred_df)
       print('''COMMENT(s): 
             Sample and reference amount combination is appropriate.
             Consider 0.8~ml as standard amount to avoid any deviation in the measurement.''')
     else:
-      print('Heat capacity measurement deviation prediction (%): ', pred_)
+      print('Heat capacity measurement deviation prediction (%): ')
+      print(pred_df)
       print('''COMMENT(s): 
             Sample and reference amount maybe not appropriate.
             The reference material may too low!
