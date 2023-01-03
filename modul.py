@@ -21,7 +21,7 @@ class dsc_error_model():
     self.Sam = Sam/stable_ml
     model = load_model('micro_dsc_dl.h5')
     scaler = joblib.load('scaler.pkl')
-    data = [self.Ref, self.Sam, self.Ref/self.Sam]
+    data = [self.Ref, self.Sam, (self.Ref*self.Ref)/self.Sam]
     data = pd.DataFrame([data])
     data_ = scaler.transform(data)
     pred = model.predict(data_)
