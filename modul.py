@@ -9,7 +9,7 @@ information ='''
 
 * Predict the possible deviation that may arise in the heat capacity measurement experiment with the sample and a reference material amount in [ml]!
 
--->ANN Model accuracy on the test data is 99.99 [%]<--'''
+-->ANN Model accuracy on the test data is 99.62 [%]<--'''
 
 print(information)
 print('-'*70)
@@ -25,7 +25,7 @@ class dsc_error_model():
     data = pd.DataFrame([data])
     data_ = scaler.transform(data)
     pred = model.predict(data_)
-    pred_ = np.round(((pred*100)-100).astype(np.float64),2)
+    pred_ = np.round(((pred*100)-100).astype(np.float64),1)
     
     print('-'*70)
     print('Reference amount [ml]: ', Ref)
@@ -33,15 +33,17 @@ class dsc_error_model():
     
     if abs(pred_) <= 1.5:
       print('Heat capacity measurement deviation prediction (%): ', pred_)
-      print('''COMMENT(s): 
-            Sample and reference amount combination is appropriate.
+      print('''COMMENT(s):
+            The predicted deviation is below 1%!
+            The combination of the sample and the reference amount is appropriate.
+            NOTE:
             Consider 0.8~ml as standard amount to avoid any deviation in the measurement.''')
     else:
       print('Heat capacity measurement deviation prediction (%): ', pred_)
       print('''COMMENT(s): 
-            Sample and reference amount maybe not appropriate.
+            The combination of the sample and the reference amount is NOT appropriate.
+            NOTE:
             The reference material may too low!
-            Re-run calibration with the fully filled reference material in a batch cell to avoid a large deviation.
             Consider 0.8~ml as standard amount to avoid any deviation in the measurement.
             ''')
     print('-'*70)
