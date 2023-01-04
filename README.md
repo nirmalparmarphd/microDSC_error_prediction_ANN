@@ -1,7 +1,7 @@
 # microDSC_error_prediction_ANN
 Prediction in the isobaric heat capacity measurement (at 298~K) deviation due to improper amount of the sample or/and calibration standard in Tian-Calvet microDSC
 
-> Estimated ANN Model prediction accuracy over the test data is '99.99 %'
+> Estimated ANN Model prediction accuracy over the test data is '99.62[%]'
 
 ![Deep Neural Network Architecture used in the present case](dsc_ann.png)
 
@@ -13,18 +13,25 @@ Use python file 'mwe.py' file to predict the error in heat capacity measurement
 Minimum Working Example
 
 ```python:
+# prediction of error/deviation in the heat capacity measurement
+# use: prediction = dsc_error_model(Reference amount, Sample amount)
+# NOTE: enter the sample and reference material amount as mentioned below
+    ## Full cell:               1.0 
+    ## Two Third full cell:     0.66
+    ## One half full cell:      0.5
+    ## One third full cell:     0.33
+
+
+### MINIMUM WORKING EXAMPLE ###
+
 # import module
 from modul import *
 
-# prediction of error/deviation in the heat capacity measurement
-# use: prediction = dsc_error_model(Reference amount(ml), Sample amount(ml))
-# NOTE: enter the sample and reference material amount in [ml] 
+# defining values
+Reference_amount = 1
+Sample_amount = 1
 
-# Example 1: Reference amount(ml) = 0.8, Sample amount(ml)= 0.8
-# 0.8~ml [full], 0.4~ml [half full], 2.6~ml [one third full]
-Reference_amount = 0.8
-Sample_amount = 0.8
-
+# prediction of deviation in heat capacity measurement
 error_pred = dsc_error_model(Reference_amount,Sample_amount)
 
 ```
@@ -32,14 +39,15 @@ error_pred = dsc_error_model(Reference_amount,Sample_amount)
 The example output
 
 ```
-1/1 [==============================] - 0s 81ms/step
+1/1 [==============================] - 0s 392ms/step
 ----------------------------------------------------------------------
-Reference amount [ml]:  0.8
-Sample amount [ml]:  0.8
-Heat capacity measurement deviation prediction (%):  [[0.42]]
-COMMENT(s): 
-            Sample and reference amount combination is appropriate.
+Reference amount :  1
+Sample amount :  1
+Heat capacity measurement deviation prediction (%):  [[-0.1]]
+COMMENT(s):
+            The predicted deviation is below 1%!
+            The combination of the sample and the reference amount is appropriate.
+            NOTE:
             Consider 0.8~ml as standard amount to avoid any deviation in the measurement.
 ----------------------------------------------------------------------
-
 ```
