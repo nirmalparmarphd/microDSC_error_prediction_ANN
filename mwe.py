@@ -9,8 +9,8 @@ from modul import *
 
 # Example 1: Reference amount(ml) = 0.8, Sample amount(ml)= 0.8
 # 0.8~ml [full], 0.4~ml [half full], 0.26~ml [one third full]
-Reference_amount = 0.8
-Sample_amount = 0.8
+Reference_amount = 0.3
+Sample_amount = 1.0
 
 error_pred = dsc_error_model(Reference_amount,Sample_amount)
 
