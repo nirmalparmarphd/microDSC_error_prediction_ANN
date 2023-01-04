@@ -13,7 +13,7 @@
 from modul import *
 
 # defining values
-Reference_amount = 0.3
+Reference_amount = 1
 Sample_amount = 1
 
 # prediction of deviation in heat capacity measurement
