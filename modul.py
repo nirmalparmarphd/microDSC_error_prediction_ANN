@@ -7,7 +7,7 @@ print('-'*70)
 information ='''
 * This is a Deep learning (DL) ANN model to predict a deviation due to an inappropriate amount combination of the sample and a reference material in a batch cell of Tian-Calvet micro-DSC.
 
-* Predict the possible deviation that may arise in the heat capacity measurement experiment with the sample and a reference material amount!
+* This ANN model predicts the possible deviation that may arise in the heat capacity measurement experiment due to in appropriate combination of the sample and the reference material amount!
 
 -->ANN Model accuracy on the test data is 99.62 [%]<--'''
 
@@ -42,7 +42,6 @@ class dsc_error_model():
       print('''COMMENT(s): 
             The combination of the sample and the reference amount is NOT appropriate.
             NOTE:
-            The reference material may too low!
             Consider 0.8~ml as standard amount to avoid any deviation in the measurement.
             ''')
     print('-'*70)
