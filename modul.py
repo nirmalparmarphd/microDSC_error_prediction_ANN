@@ -9,7 +9,7 @@ information ='''
 
 * This ANN model predicts the possible deviation that may arise in the heat capacity measurement experiment due to in appropriate combination of the sample and the reference material amount!
 
--->ANN Model accuracy on the test data is 99.62 [%]<--'''
+-->ANN Model accuracy on the test data is 99.52 [%]<--'''
 
 print(information)
 print('-'*70)
@@ -20,7 +20,7 @@ class dsc_error_model():
     self.Sam = Sam
     model = load_model('micro_dsc_dl.h5')
     scaler = joblib.load('scaler.pkl')
-    data = [self.Ref, self.Sam, self.Ref/self.Sam]
+    data = [self.Ref, self.Sam, (self.Ref+self.Sam)]
     data = pd.DataFrame([data])
     data_ = scaler.transform(data)
     pred = model.predict(data_)
