@@ -43,7 +43,7 @@ The example output
 ----------------------------------------------------------------------
 Reference amount :  1
 Sample amount :  1
-Heat capacity measurement deviation prediction (%):  [[-0.1]]
+Heat capacity measurement deviation prediction (%):  [[0.]]
 COMMENT(s):
             The predicted deviation is below 1%!
             The combination of the sample and the reference amount is appropriate.
