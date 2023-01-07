@@ -11,7 +11,7 @@ information ='''
 
 * This ANN model predicts the possible deviation that may arise in the heat capacity measurement experiment due to in appropriate combination of the sample and the reference material amount!
 
--->ANN Model accuracy on the test data is 99.61 [%]<--'''
+-->ANN Model accuracy on the test data is 99.81 [%]<--'''
 
 print(information)
 print('-'*70)
