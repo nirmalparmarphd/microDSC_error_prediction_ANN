@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-#from sklearn.externals import joblib
+import sklearn.preprocessing
 import pickle
 from tensorflow.keras.models import load_model
 
@@ -25,7 +25,7 @@ class dsc_error_model():
       scaler = pickle.load(f)
     print('scaler loaded')
     vol_rel = (self.Ref*self.Ref)/self.Sam
-    print('vol-rel calculated')
+    print('vol-rel calculated', vol_rel)
     data = [self.Ref, self.Sam, vol_rel]
     data = pd.DataFrame([data])
     data_ = scaler.transform(data)
