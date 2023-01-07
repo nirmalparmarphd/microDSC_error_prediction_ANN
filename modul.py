@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import sklearn.preprocessing
 import pickle
+import joblib
 from tensorflow.keras.models import load_model
 
 print('-'*70)
@@ -20,12 +21,9 @@ class dsc_error_model():
     self.Ref = Ref
     self.Sam = Sam
     model = load_model('micro_dsc_dl.h5')
-    print('ann model loaded')
     with open('scaler.pkl' , 'rb') as f:
       scaler = pickle.load(f)
-    print('scaler loaded')
-    vol_rel = (self.Ref*self.Ref)/self.Sam
-    print('vol-rel calculated', vol_rel)
+    vol_rel = (Ref*Ref)/Sam
     data = [self.Ref, self.Sam, vol_rel]
     data = pd.DataFrame([data])
     data_ = scaler.transform(data)
@@ -36,7 +34,7 @@ class dsc_error_model():
     print('Reference amount : ', Ref)
     print('Sample amount : ', Sam)
     
-    if abs(pred_) <= 1.5:
+    if abs(pred_) <= 1:
       print('Heat capacity measurement deviation prediction (%): ', pred_)
       print('''COMMENT(s):
             The predicted deviation is below 1%!
