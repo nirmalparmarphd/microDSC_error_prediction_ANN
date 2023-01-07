@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
-import joblib
+#from sklearn.externals import joblib
+import pickle
 from tensorflow.keras.models import load_model
 
 print('-'*70)
@@ -19,8 +20,13 @@ class dsc_error_model():
     self.Ref = Ref
     self.Sam = Sam
     model = load_model('micro_dsc_dl.h5')
-    scaler = joblib.load('scaler.pkl')
-    data = [self.Ref, self.Sam, (self.Ref+self.Sam)]
+    print('ann model loaded')
+    with open('scaler.pkl' , 'rb') as f:
+      scaler = pickle.load(f)
+    print('scaler loaded')
+    vol_rel = (self.Ref*self.Ref)/self.Sam
+    print('vol-rel calculated')
+    data = [self.Ref, self.Sam, vol_rel]
     data = pd.DataFrame([data])
     data_ = scaler.transform(data)
     pred = model.predict(data_)

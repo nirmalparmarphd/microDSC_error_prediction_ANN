@@ -10,11 +10,11 @@
 ### MINIMUM WORKING EXAMPLE ###
 
 # import module
-from modul import *
+from modul import dsc_error_model
 
 # defining values
-Reference_amount = 1
-Sample_amount = 1
+Reference_amount = 1.0
+Sample_amount = 1.0
 
 # prediction of deviation in heat capacity measurement
 error_pred = dsc_error_model(Reference_amount,Sample_amount)
